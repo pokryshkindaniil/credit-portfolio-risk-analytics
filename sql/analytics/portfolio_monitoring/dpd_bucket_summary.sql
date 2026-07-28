@@ -5,7 +5,7 @@ WITH dpd_buckets(dpd_bucket, sort_order) AS (
         ('Current', 1),
         ('1-30', 2),
         ('31-60', 3),
-        ('61-90', 4),
+        ('61-89', 4),
         ('90+', 5)
 )
 
