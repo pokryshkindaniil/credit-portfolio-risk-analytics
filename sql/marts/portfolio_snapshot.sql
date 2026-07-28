@@ -60,7 +60,7 @@ SELECT
         WHEN COALESCE(dc.current_dpd, 0) = 0 THEN 'Current'
         WHEN dc.current_dpd <= 30 THEN '1-30'
         WHEN dc.current_dpd <= 60 THEN '31-60'
-        WHEN dc.current_dpd <= 90 THEN '61-90'
+        WHEN dc.current_dpd <= 89 THEN '61-89'
         ELSE '90+'
     END AS dpd_bucket
 
