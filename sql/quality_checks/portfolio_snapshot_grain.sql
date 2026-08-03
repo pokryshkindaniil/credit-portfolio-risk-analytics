@@ -3,6 +3,8 @@
 -- A valid snapshot should return no rows.
 -- Grain: one row per duplicated loan contract.
 
+SET search_path TO credit_portfolio;
+
 SELECT
     loan_contract_id,
     COUNT(*) AS row_count

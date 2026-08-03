@@ -3,6 +3,8 @@
 -- A valid snapshot should return no rows.
 -- Grain: one row per missing loan contract.
 
+SET search_path TO credit_portfolio;
+
 SELECT
   lc.loan_contract_id,
   lc.contract_number,

@@ -6,7 +6,7 @@
 SET search_path TO credit_portfolio;
 
 WITH params AS (
-    SELECT DATE '2026-07-25' AS report_date
+    SELECT CURRENT_DATE AS report_date
 ),
 
 dpd_buckets(dpd_bucket, sort_order) AS (

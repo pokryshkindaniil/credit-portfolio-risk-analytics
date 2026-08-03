@@ -69,11 +69,11 @@ SELECT
   ) AS delinquency_rate_pct,
 
   COUNT(mob.loan_contract_id)
-    FILTER (WHERE mob.current_dpd > 30) AS dpd_30_plus_contracts,
+    FILTER (WHERE mob.current_dpd >= 30) AS dpd_30_plus_contracts,
 
   ROUND(
     COUNT(mob.loan_contract_id)
-      FILTER (WHERE mob.current_dpd > 30)::NUMERIC
+      FILTER (WHERE mob.current_dpd >= 30)::NUMERIC
     / NULLIF(COUNT(mob.loan_contract_id), 0)
     * 100,
     2
@@ -82,7 +82,7 @@ SELECT
   ROUND(
     COALESCE(
       SUM(mob.outstanding_principal)
-        FILTER (WHERE mob.current_dpd > 30),
+        FILTER (WHERE mob.current_dpd >= 30),
       0
     )::NUMERIC
     / NULLIF(SUM(mob.outstanding_principal), 0)
